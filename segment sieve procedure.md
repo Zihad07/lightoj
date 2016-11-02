@@ -1,10 +1,10 @@
 Segmented Sieve of Eratosthenes
 Problem
-Given two integers A and B, find number of primes inside the range of A and B inclusive. Here, 1≤A≤B≤10^12 and B−A≤105.
+Given two integers A and B, find number of primes inside the range of A and B inclusive. Here, 1≤A≤B≤10^12 and B−A≤10^5.
 
 For example, A=11 and B=19, then answer is 4 since there are 4 primes within that range (11,13,17,19).
 
-If limits of A and B were small enough ( ≤10^8 ), then we could solve this problem using the ordinary sieve. But here limits are huge, so we don't have enough memory or time to run normal sieve. But note that, B−A≤105. So even though we don't have memory/time to run sieve from 1 to N, we have enough memory/time to cover A to B.
+If limits of A and B were small enough ( ≤10^8 ), then we could solve this problem using the ordinary sieve. But here limits are huge, so we don't have enough memory or time to run normal sieve. But note that, B−A≤10^5. So even though we don't have memory/time to run sieve from 1 to N, we have enough memory/time to cover A to B.
 
 A to B is a segment, and we are going to modify our algorithm for Sieve of Eratosthenes to cover this segment. Hence, the modified algorithm is called Segmented Sieve of Eratosthenes. 
 
@@ -38,7 +38,7 @@ Run on Segment
 Okay, now we can start our "Segmented" Sieve. We want to find primes between A and B. 
 If A is equal to 1, then increase A by 1. That is, make A=2. Since 1 is not a prime, this does not change our answer.
 Define a new variable sqrtn=B−−√.
-Declare a new array of size dif=maximum difference of (B−A)+1. Since it is given in our problem that B−A≤105, dif=105+1 for this problem. 
+Declare a new array of size dif=maximum difference of (B−A)+1. Since it is given in our problem that B−A≤105, dif=10^5+1 for this problem. 
 
 Let the array be called arr. This array has index from 0 to dif−1. Here arr[0] represents the number A, arr[1] represents A+1 and so on.
 Now, we will be working with all primes less than sqrtn. These primes are already generated using the normal sieve.
